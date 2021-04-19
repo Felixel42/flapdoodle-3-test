@@ -122,3 +122,4 @@ java.nio.file.NoSuchFileException: target/embedmongo/Linux-B64--4.0.12/target/em
 ## flapdoodle 2 branch
 - flapdoodle 2
 - spring boot 2.4
+- `extractDir()` is working just fine with relative paths
