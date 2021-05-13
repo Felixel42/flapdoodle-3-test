@@ -119,6 +119,13 @@ java.nio.file.NoSuchFileException: target/embedmongo/Linux-B64--4.0.12/target/em
 	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54) ~[junit-rt.jar:na]
 ```
 
+### Links to find a solution
+- https://github.com/flapdoodle-oss/de.flapdoodle.embed.process/blob/de.flapdoodle.embed.process-2.1.2/src/main/java/de/flapdoodle/embed/process/store/ExtractedArtifactStore.java
+
+### File stuff
+- https://stackoverflow.com/questions/28698125/java-check-if-path-is-parent-of-a-file/28699663
+- https://stackoverflow.com/questions/4746671/how-to-check-if-a-given-path-is-possible-child-of-another-path
+
 ## flapdoodle 2 branch
 - flapdoodle 2
 - spring boot 2.4
