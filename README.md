@@ -130,7 +130,7 @@ java.nio.file.NoSuchFileException: target/embedmongo/Linux-B64--4.0.12/target/em
 - https://stackoverflow.com/questions/28698125/java-check-if-path-is-parent-of-a-file/28699663
 - https://stackoverflow.com/questions/4746671/how-to-check-if-a-given-path-is-possible-child-of-another-path
 
-### workaround
+### Workaround
 create an absolute path from the relative target and pass it to flapdoodle's extraction/temp config
 ```java
 final var absoluteExtractionPathFromRelative = Paths.get("target/embedmongo").toAbsolutePath().toString();
