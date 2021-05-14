@@ -6,7 +6,7 @@
 ## main branch
 - flapdoodle 3
 - spring boot 2.5
-- Error when using `withExtraction` with relative path, absolute path is working but not really a solution
+- Error when using `withExtraction` with relative path
 ```
 2021-04-19 17:45:39.856  INFO 17546 --- [           main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to default profiles: default
 2021-04-19 17:45:40.598  INFO 17546 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
