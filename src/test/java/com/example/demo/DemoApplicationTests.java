@@ -26,6 +26,5 @@ class DemoApplicationTests {
 					   .relativize(Path.of("target/embedmongo/test"))).isEqualTo(Path.of("test"));
 		assertThat(Path.of("/target/embedmongo")
 					   .relativize(Path.of("/target/embedmongo/test"))).isEqualTo(Path.of("test"));
-
 	}
 }

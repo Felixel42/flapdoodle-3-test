@@ -9,9 +9,10 @@ import de.flapdoodle.embed.process.extract.DirectoryAndExecutableNaming;
 import de.flapdoodle.embed.process.extract.NoopTempNaming;
 import de.flapdoodle.embed.process.io.directories.Directory;
 import de.flapdoodle.embed.process.io.directories.FixedPath;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import java.nio.file.Paths;
 
 @Configuration
 public class FlapdoodleMongoConfiguration {
@@ -21,12 +22,18 @@ public class FlapdoodleMongoConfiguration {
 
     @Bean
     public RuntimeConfig runtimeConfig() {
+        final var absoluteExtractionPathFromRelative = Paths.get("target/embedmongo").toAbsolutePath().toString();
         return Defaults.runtimeConfigFor(command)
                        .artifactStore(Defaults.extractedArtifactStoreFor(command)
                                               .withExtraction(DirectoryAndExecutableNaming.builder()
-                                                                                          .directory(extractStorePathRelative)
+                                                                                          .directory(new FixedPath(absoluteExtractionPathFromRelative))
                                                                                           .executableNaming(new NoopTempNaming())
                                                                                           .build())
+//                                              .withTemp(DirectoryAndExecutableNaming.builder()
+//                                                                                    .directory(new FixedPath(absoluteExtractionPathFromRelative))
+//                                                                                    .executableNaming(new UUIDTempNaming())
+//                                                                                    .build()
+//                                              )
                        )
                        .build();
     }

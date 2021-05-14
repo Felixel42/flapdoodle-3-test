@@ -1,4 +1,8 @@
 # flapdoodle-3-test
+
+- https://github.com/flapdoodle-oss/de.flapdoodle.embed.process/issues/122 
+- https://github.com/flapdoodle-oss/de.flapdoodle.embed.mongo/issues/342 
+
 ## main branch
 - flapdoodle 3
 - spring boot 2.5
@@ -119,13 +123,20 @@ java.nio.file.NoSuchFileException: target/embedmongo/Linux-B64--4.0.12/target/em
 	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54) ~[junit-rt.jar:na]
 ```
 
-### Links to find a solution
+### Links to find a solution in flapdoodle lib
 - https://github.com/flapdoodle-oss/de.flapdoodle.embed.process/blob/de.flapdoodle.embed.process-2.1.2/src/main/java/de/flapdoodle/embed/process/store/ExtractedArtifactStore.java
 
 ### File stuff
 - https://stackoverflow.com/questions/28698125/java-check-if-path-is-parent-of-a-file/28699663
 - https://stackoverflow.com/questions/4746671/how-to-check-if-a-given-path-is-possible-child-of-another-path
 
+### workaround
+create an absolute path from the relative target and pass it to flapdoodle's extraction/temp config
+```java
+final var absoluteExtractionPathFromRelative = Paths.get("target/embedmongo").toAbsolutePath().toString();
+```
+
 ## flapdoodle 2 branch
 - flapdoodle 2
 - spring boot 2.4
+- absolute and relative both working with extraction 
